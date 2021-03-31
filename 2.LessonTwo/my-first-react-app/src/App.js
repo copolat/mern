@@ -1,3 +1,5 @@
+import Blog from "./components/Blog";
+
 const User = {
   name: "John",
   lastName: "Doe",
@@ -9,7 +11,16 @@ const User = {
 function App() {
   return (
     <>
-      <h1 id="title">USER INFO</h1>
+      <Blog />
+      <hr />
+      <Blog />
+      <Blog />
+      <Blog />
+      <Blog />
+      <Blog />
+      <Blog />
+      <Blog />
+      {/* <h1 id="title">USER INFO</h1>
       <h2>Name: {User.name}</h2>
       <h2>Lastname: {User.lastName}</h2>
       <h2>Age: {User.age}</h2>
@@ -19,7 +30,7 @@ function App() {
         src="https://www.loftaholics.com/wp-content/uploads/2020/11/photos.jpg"
         alt=""
         width="80%"
-      />
+      /> */}
     </>
   );
 }
