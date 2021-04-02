@@ -7,19 +7,19 @@ const User = {
   email: "jdoe@email.com",
   isActive: false,
 };
-
+// state-less
 function App() {
   return (
     <>
       <Blog />
       <hr />
+      {/* <Blog />
       <Blog />
       <Blog />
       <Blog />
       <Blog />
       <Blog />
-      <Blog />
-      <Blog />
+      <Blog /> */}
       {/* <h1 id="title">USER INFO</h1>
       <h2>Name: {User.name}</h2>
       <h2>Lastname: {User.lastName}</h2>
