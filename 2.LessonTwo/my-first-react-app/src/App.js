@@ -1,4 +1,5 @@
 import Blog from "./components/Blog";
+import Counter from './components/Counter';
 
 const User = {
   name: "John",
@@ -13,6 +14,9 @@ function App() {
     <>
       <Blog />
       <hr />
+      <Counter> </Counter>
+      <hr />
+
       {/* <Blog />
       <Blog />
       <Blog />
@@ -29,9 +33,8 @@ function App() {
       <img
         src="https://www.loftaholics.com/wp-content/uploads/2020/11/photos.jpg"
         alt=""
-        width="80%"
-      /> */}
-    </>
+        width="80%"*/}
+      </> 
   );
 }
 export default App;

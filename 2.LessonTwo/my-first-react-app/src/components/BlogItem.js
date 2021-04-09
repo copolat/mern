@@ -22,7 +22,9 @@ class BlogItem extends Component {
   };
   buttonClick = () => {
     console.log("Hello from BLOG ITEM")
-  }
+  };
+
+ 
   render() {
     console.log(this.props);
     const myStyle = {

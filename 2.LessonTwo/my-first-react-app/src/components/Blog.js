@@ -2,8 +2,19 @@ import React, { Component } from "react";
 import BlogItem from './BlogItem'
 
 export default class Blog extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      number: 10
+    }
+  }
+
   blogClick = () => {
     console.log("Hello from BLOG.JS")
+    console.log(this.state.number)
+    this.setState({
+      number: 'Tom' + Math.floor(Math.random()*10)
+    })
   }
   render() {
     let greet = 'Welcome...'
