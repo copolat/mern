@@ -21,8 +21,9 @@ export default class Form extends Component {
   };
   sendForm = (event) =>{
     event.preventDefault();
-    console.log('Form submitted...');
+    //console.log('Form submitted...');
     this.props.addContact({...this.state})
+    this.setState({name:'', phone:''})
   }
   render() {
     return (
@@ -30,12 +31,14 @@ export default class Form extends Component {
         <h2>Form</h2>
         <input
           onChange={this.onInputChange}
+          value = {this.state.name}
           name="name"
           id="name"
           placeholder="Enter a name..."
         />
         <input
           onChange={this.onInputChange}
+          value = {this.state.phone}
           name="phone"
           id="phone"
           placeholder="Enter a phone number..."
