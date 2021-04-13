@@ -9,13 +9,21 @@ export default class Contact extends Component {
       {name: 'Name 2', phone: '+1265482540'},
       {name: 'Name 3', phone: '+9834567890'},
       {name: 'John', phone: '+5553337678'},
+      {name: 'Alex', phone: '+5298637678'},
     ]
+  }
+  addContact = (datas) => {
+    //console.log('Hello from CONTACT component....')
+    console.log(datas)
+    const {contacts} = this.state
+    contacts.push(datas)
+    this.setState({contacts: contacts})
   }
   render() {
     return (
       <div>
         <List  contacts={this.state.contacts}/>
-        <Form />
+        <Form addContact={this.addContact}/>
       </div>
     );
   }
