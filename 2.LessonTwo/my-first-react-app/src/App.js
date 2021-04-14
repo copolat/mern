@@ -1,5 +1,7 @@
 import Blog from "./components/Blog";
 import Counter from './components/Counter';
+import DataBinding from './components/DataBinding';
+
 
 const User = {
   name: "John",
@@ -10,8 +12,13 @@ const User = {
 };
 // state-less
 function App() {
+  const appjsClick = (text) => {
+    console.log('APP.JS clicked', text)
+  }
   return (
     <>
+      <DataBinding appjsClick={appjsClick} />
+      <hr/><hr/>
       <Blog />
       <hr />
       <Counter> </Counter>

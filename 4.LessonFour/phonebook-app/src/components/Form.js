@@ -10,19 +10,23 @@ export default class Form extends Component {
   };
   onInputChange = (e) => {
     //console.log(e.target.value)
-    /*if(e.target.name === 'name') {
-      this.setState({name:e.target.value})
-    } else if (e.target.name === 'phone'){
-      this.setState({
-        phone: e.target.value
-      })*/
+    // if(e.target.name === 'name') {
+    //   this.setState({name:e.target.value})
+    // } else if (e.target.name === 'phone'){
+    //   this.setState({
+    //     phone: e.target.value
+    //   })
     this.setState({ [e.target.name]: e.target.value });
     //console.log(this.state);
   };
   sendForm = (event) =>{
     event.preventDefault();
     //console.log('Form submitted...');
-    this.props.addContact({...this.state})
+    if (this.state.name !== '' && this.state.phone !== '') {
+      this.props.addContact({...this.state})
+    } else {
+      alert('Name or Phone cannot be empty!!!')
+    }
     this.setState({name:'', phone:''})
   }
   render() {
