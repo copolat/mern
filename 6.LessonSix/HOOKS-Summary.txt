@@ -1,0 +1,45 @@
+HOOKS
+1- useState --> create a state
+  *Import -> import React, { useState } from 'react'
+  *Define -> const [state, setState] = useState(initialValue)
+  *Use -> setState('Hello') => it will assign "Hello" string into state.
+
+*****************************************************************************
+2- useEffect --> React component life cycle
+  *Import -> import React, { useState, useEffect } from 'react'
+  *Define (I) -> useEffect(()=>{},[]) => It works as componentDidMount()
+  *Define (II) -> useEffect(()=>{}) => It works as componentDidMount() 
+                                       and componentDidUpdate()
+
+  *Define (III) -> useEffect(()=>{.....  return ...},[]) => It works as 
+                                                  componentWillUnmount()
+
+*****************************************************************************
+3- Context --> it stores and passes data between components without hierarcy
+  *Create -> import { createContext } from 'react'
+             export const [contextName]= createContext()
+
+  *Provide Content -> Go to the component that will provide the data for
+                     the context. (Do not forget to import the context)
+                    .... return (
+                                   <[contextName].Provider value = {[dataToSend]}                                                   
+                                    ......................          
+                                   </ [contextName].Provider>
+                                )
+
+  *Consume the Context -> Import the context from the component
+                         const {data1} = useContext([contextName]) 
+                         // data1 is coming from value
+                         const {data2} = useContext([contextName])
+
+*********************************************************************************
+4- useRef --> It lets you to reach out DOM elements
+  *Import -> import React, { useRef } from 'react'
+  *Define -> const [domElement] = useRef()
+             Go to the DOM element and bind it 
+             Ex: <div ref={domElement}
+  *Use -> [domElement].current.(focus, {style}, value...)
+
+*********************************************************************************
+5- useReducer --> to make a better coding of "state"
+

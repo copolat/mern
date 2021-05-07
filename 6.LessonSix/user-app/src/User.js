@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { UserContext } from './context/UserContext'
 
-function User({user,changeColor}) {
+function User({user}) {
   //console.log(user)
-  console.log(changeColor)
+  //console.log(changeColor)
+  const {changeColor} = useContext(UserContext)
   return (
     <div style={{background:user.color}}>
       <h3>Name: {user.name}</h3>

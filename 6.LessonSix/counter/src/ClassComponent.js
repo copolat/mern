@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 
 export default class ClassComponent extends Component {
-  // constructor(props) {
+  constructor(props) {
   //   super(props)
   
-  //   this.state = {
-  //      counter:0 ,
+  //    this.state = {
+  //       counter:0 ,
   //      loading: true
-  //   }
-  // }
+  //    }
+  //  }
   state ={counter:0, isVisible:false, timer:0}
   increase = () => {
     this.setState({counter: this.state.counter+1})
