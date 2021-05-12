@@ -1,29 +1,23 @@
 import './App.css';
-import { createStore } from 'redux'
-
-function reducer (state, action){
-  console.log("Action parameters =>", action)
-  if(action.type ==='changeTheState'){
-    return action.payload.newState
-  }
-  return 'State12346'
-}
-const myStore = createStore(reducer)
-console.log('OLD State=>',myStore.getState())
-
-const action = { type:'changeTheState', payload:{newState:"My new State..."}}
-
-myStore.dispatch(action)
-myStore.dispatch(action)
-myStore.dispatch(action)
-myStore.dispatch(action)
-console.log('NEW State=>',myStore.getState())
-function App() {
+import { connect } from 'react-redux'
+import {updateUser, addUser, deleteUser} from './actions/userAction'
+function App(props) {
+  console.log("App PROPS=> ", props)
   return (
     <div className="App">
       <h1>App Component</h1>
+      {props.userReducer}
+      <br />
+      <button onClick={()=>props.updateUser("Tom")}>UPDATE USER</button>
+      <button onClick={()=>props.addUser("Jill")}>ADD USER</button>
+      <button onClick={()=>props.deleteUser()}>DELETE USER</button>
     </div>
   );
 }
-
-export default App;
+const mapDispatchToProps ={
+  updateUser, addUser, deleteUser
+}
+const mapStateToProps = state =>{
+  return state
+}
+export default connect(mapStateToProps,mapDispatchToProps)(App);
